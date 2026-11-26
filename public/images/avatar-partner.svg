@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+<defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#D9C6FF"/><stop offset="1" stop-color="#BC9FF0"/></linearGradient></defs>
+<rect width="480" height="480" fill="url(#g3)"/>
+<circle cx="80" cy="90" r="150" fill="#FFFFFF" opacity="0.14"/>
+<circle cx="410" cy="400" r="170" fill="#FFFFFF" opacity="0.10"/>
+<circle cx="240" cy="240" r="224" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="5" stroke-dasharray="0.1 24" stroke-linecap="round"/>
+<circle cx="198" cy="230" r="11" fill="#7D5470"/>
+<circle cx="282" cy="230" r="11" fill="#7D5470"/>
+<path d="M216 272 Q240 296 264 272" fill="none" stroke="#7D5470" stroke-width="8" stroke-linecap="round"/>
+<circle cx="172" cy="264" r="14" fill="#FF8FB4" opacity="0.5"/>
+<circle cx="308" cy="264" r="14" fill="#FF8FB4" opacity="0.5"/>
+<g transform="translate(350,115) rotate(15)" fill="#FF7FA9"><ellipse cx="-17" cy="0" rx="20" ry="13" transform="rotate(-26)"/><ellipse cx="17" cy="0" rx="20" ry="13" transform="rotate(26)"/><circle r="9"/></g>
+<text x="240" y="448" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif" font-size="16" fill="#FFFFFF" fill-opacity="0.7" letter-spacing="1">avatar-partner.svg · 在 config.js 中可换成真实照片</text>
+</svg>

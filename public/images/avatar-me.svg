@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+<defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#FFC2D7"/><stop offset="1" stop-color="#FF9FC2"/></linearGradient></defs>
+<rect width="480" height="480" fill="url(#g2)"/>
+<circle cx="80" cy="90" r="150" fill="#FFFFFF" opacity="0.14"/>
+<circle cx="410" cy="400" r="170" fill="#FFFFFF" opacity="0.10"/>
+<circle cx="240" cy="240" r="224" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="5" stroke-dasharray="0.1 24" stroke-linecap="round"/>
+<circle cx="198" cy="230" r="11" fill="#7D5470"/>
+<circle cx="282" cy="230" r="11" fill="#7D5470"/>
+<path d="M216 272 Q240 296 264 272" fill="none" stroke="#7D5470" stroke-width="8" stroke-linecap="round"/>
+<circle cx="172" cy="264" r="14" fill="#FF8FB4" opacity="0.5"/>
+<circle cx="308" cy="264" r="14" fill="#FF8FB4" opacity="0.5"/>
+<g transform="translate(100,110) scale(0.75)" fill="#FFFFFF" fill-opacity="0.9"><path d="M0,-46 C3,-12 12,-3 46,0 C12,3 3,12 0,46 C-3,12 -12,3 -46,0 C-12,-3 -3,-12 0,-46 Z"/></g>
+<text x="240" y="448" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif" font-size="16" fill="#FFFFFF" fill-opacity="0.7" letter-spacing="1">avatar-me.svg · 在 config.js 中可换成真实照片</text>
+</svg>

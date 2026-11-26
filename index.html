@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Little Universe ♡ 我们的小宇宙</title>
+  <meta name="description" content="一本专属于两个人的数字爱情纪念册:恋爱天数、回忆时间轴、相册、未来约定和纪念日倒计时。">
+  <meta name="theme-color" content="#FFD3E2">
+  <!-- 网站小图标(粉色爱心,内嵌 SVG,无需额外文件) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 30'%3E%3Cpath d='M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z' fill='%23F27B9B'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 漂浮的爱心/星星背景(script.js 自动生成) -->
+  <div class="floating-bg" id="floatingBg" aria-hidden="true"></div>
+
+  <!-- ============ 顶部导航栏 ============ -->
+  <nav class="navbar" id="navbar">
+    <a class="nav-logo" href="#home">🌙 <span id="navLogoText">Our Little Universe</span></a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"        class="nav-link active">🏠 首页</a></li>
+      <li><a href="#story"       class="nav-link">📖 我们的故事</a></li>
+      <li><a href="#gallery"     class="nav-link">📷 回忆相册</a></li>
+      <li><a href="#future"      class="nav-link">🌙 未来约定</a></li>
+      <li><a href="#anniversary" class="nav-link">🎉 纪念日</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============ ① 首页 Home ============ -->
+    <section class="hero" id="home">
+      <!-- 手账贴纸装饰 -->
+      <span class="hero-sticker" style="top:15%;left:7%;animation-delay:.3s" aria-hidden="true">🎀</span>
+      <span class="hero-sticker" style="top:24%;right:8%;animation-delay:1.2s" aria-hidden="true">☁️</span>
+      <span class="hero-sticker" style="top:62%;left:10%;animation-delay:.8s" aria-hidden="true">⭐</span>
+      <span class="hero-sticker" style="top:56%;right:12%;animation-delay:1.6s" aria-hidden="true">🌷</span>
+
+      <div class="hero-inner">
+        <p class="hero-hello fade-seq" style="animation-delay:.05s" id="welcomeText"></p>
+        <h1 class="hero-title fade-seq" style="animation-delay:.15s" id="siteTitle"></h1>
+        <p class="hero-subtitle fade-seq" style="animation-delay:.25s" id="siteSubtitle"></p>
+
+        <!-- 我们俩(昵称 + 头像) -->
+        <div class="hero-couple fade-seq" style="animation-delay:.35s">
+          <div class="couple-card tilt-l">
+            <img id="avatarMe" alt="我的头像占位图">
+            <span class="couple-name" id="nicknameMe"></span>
+          </div>
+          <div class="couple-heart" aria-hidden="true">💛</div>
+          <div class="couple-card tilt-r">
+            <img id="avatarPartner" alt="TA的头像占位图">
+            <span class="couple-name" id="nicknamePartner"></span>
+          </div>
+        </div>
+
+        <!-- 恋爱天数卡片(JavaScript 自动计算,每天自动更新) -->
+        <div class="days-card fade-seq" style="animation-delay:.45s">
+          <span class="days-badge" id="daysBadge" hidden></span>
+          <p class="days-label">我们已经在一起</p>
+          <p class="days-number"><span id="daysNumber">0</span><small>天</small></p>
+          <p class="days-since" id="daysSince"></p>
+          <div class="days-chips" id="daysChips"></div>
+        </div>
+
+        <!-- 首页封面照片(拍立得样式) -->
+        <figure class="polaroid hero-cover fade-seq" style="animation-delay:.55s;--tilt:-2deg">
+          <img id="coverImage" alt="我们的合照占位图" data-lightbox data-caption="我们的合照 · 在 config.js 中替换封面照片">
+          <figcaption>我们的第一本纪念册 💛</figcaption>
+        </figure>
+
+        <!-- 爱情寄语(信纸卡片) -->
+        <blockquote class="love-quote fade-seq" style="animation-delay:.65s" id="loveQuote"></blockquote>
+
+        <!-- 进入回忆页面的按钮 -->
+        <a class="btn-primary fade-seq" style="animation-delay:.75s" href="#story">翻开我们的故事 📖</a>
+
+        <!-- 重要回忆入口(取自 config.js 的前 3 段回忆) -->
+        <div class="memory-entries fade-seq" style="animation-delay:.85s">
+          <h3 class="entries-title">✨ 重要回忆入口</h3>
+          <div class="entry-grid" id="memoryEntries"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ② 我们的故事 Our Story ============ -->
+    <section class="section tint tint-cream" id="story">
+      <header class="section-head reveal">
+        <span class="section-badge" aria-hidden="true">📖</span>
+        <h2 class="section-title">我们的故事</h2>
+        <p class="section-en">— Our Story —</p>
+        <svg class="squiggle" viewBox="0 0 220 16" aria-hidden="true"><path d="M2 8 Q 12 2 22 8 T 42 8 T 62 8 T 82 8 T 102 8 T 122 8 T 142 8 T 162 8 T 182 8 T 202 8 T 218 8" stroke="#F27B9B" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.55"/></svg>
+        <p class="section-desc">从相遇到现在,每一步都算数 💫</p>
+      </header>
+      <!-- 时间轴内容由 script.js 根据 config.js 渲染 -->
+      <div class="timeline" id="timeline"></div>
+      <div class="tl-end">我们的故事,未完待续… 💫</div>
+    </section>
+
+    <!-- ============ ③ 回忆相册 Our Gallery ============ -->
+    <section class="section tint tint-pink" id="gallery">
+      <header class="section-head reveal">
+        <span class="section-badge" aria-hidden="true">📷</span>
+        <h2 class="section-title">回忆相册</h2>
+        <p class="section-en">— Our Gallery —</p>
+        <svg class="squiggle" viewBox="0 0 220 16" aria-hidden="true"><path d="M2 8 Q 12 2 22 8 T 42 8 T 62 8 T 82 8 T 102 8 T 122 8 T 142 8 T 162 8 T 182 8 T 202 8 T 218 8" stroke="#9A83D9" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.55"/></svg>
+        <p class="section-desc">那些按下快门的瞬间,都是我们的限量版回忆</p>
+      </header>
+      <p class="gallery-tip reveal">💡 每张卡片都是背面朝上的,点一下翻开就能看到照片;翻开后点右上角 🔍 可以放大</p>
+      <!-- 照片墙由 script.js 根据 config.js 渲染 -->
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- ============ ④ 未来约定 Our Future ============ -->
+    <section class="section tint tint-purple" id="future">
+      <header class="section-head reveal">
+        <span class="section-badge" aria-hidden="true">🌙</span>
+        <h2 class="section-title">未来约定</h2>
+        <p class="section-en">— Our Future —</p>
+        <svg class="squiggle" viewBox="0 0 220 16" aria-hidden="true"><path d="M2 8 Q 12 2 22 8 T 42 8 T 62 8 T 82 8 T 102 8 T 122 8 T 142 8 T 162 8 T 182 8 T 202 8 T 218 8" stroke="#F27B9B" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.55"/></svg>
+        <p class="section-desc">把想一起做的事写下来,一个一个去实现 🌱</p>
+      </header>
+
+      <!-- 愿望完成进度条 -->
+      <div class="wish-progress reveal">
+        <div class="wish-bar"><i id="wishBarFill"></i></div>
+        <span id="wishProgressText">已完成 0 / 0</span>
+      </div>
+      <!-- 愿望清单由 script.js 渲染,点击卡片可切换"已完成"状态 -->
+      <div class="wish-grid" id="wishGrid"></div>
+    </section>
+
+    <!-- ============ ⑤ 纪念日 Anniversary ============ -->
+    <section class="section tint tint-cream2" id="anniversary">
+      <header class="section-head reveal">
+        <span class="section-badge" aria-hidden="true">🎉</span>
+        <h2 class="section-title">纪念日</h2>
+        <p class="section-en">— Anniversary —</p>
+        <svg class="squiggle" viewBox="0 0 220 16" aria-hidden="true"><path d="M2 8 Q 12 2 22 8 T 42 8 T 62 8 T 82 8 T 102 8 T 122 8 T 142 8 T 162 8 T 182 8 T 202 8 T 218 8" stroke="#9A83D9" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.55"/></svg>
+        <p class="section-desc">重要日子自动倒计时,跨年也精确无误 ⏰</p>
+      </header>
+      <!-- 纪念日卡片由 script.js 渲染,按"最近要到的日子"排序 -->
+      <div class="anniv-grid" id="annivGrid"></div>
+    </section>
+  </main>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="footer tint tint-footer">
+    <p id="footerText"></p>
+    <p class="footer-small">Our Little Universe · A Little World Just for Us <span class="footer-heart">♡</span></p>
+  </footer>
+
+  <!-- ============ 照片放大查看(灯箱) ============ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="照片查看器">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="关闭">✕</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" type="button" aria-label="上一张">‹</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImg" alt="放大查看的照片">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav next" id="lightboxNext" type="button" aria-label="下一张">›</button>
+  </div>
+
+  <noscript>
+    <p style="text-align:center;padding:20px;color:#b04a75">这个纪念册需要启用 JavaScript 才能显示内容呀~ 🥺</p>
+  </noscript>
+
+  <!-- 先加载配置,再加载主脚本 -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
